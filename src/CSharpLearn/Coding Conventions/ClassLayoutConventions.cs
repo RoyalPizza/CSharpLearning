@@ -1,24 +1,24 @@
 ﻿namespace CSharpLearn.CodingConventions;
 
 /// <summary>
-/// 
+/// A class showing an example 
 /// </summary>
 internal class ClassLayoutConventions
 {
-    // Public
-    // Variables are grouped together and sorted by prority. This is not something I focus on; just what feels good.
+    // Public Variables
+    // Variables are grouped together and sorted by prority. This is not something I focus on; and do just what feels good.
     public int CardName;
     public int CardDescription;
     public int CardHealth;
     public int NameOfPlayer;
 
-    // Internal
+    // Internal Variables
     internal int AVeryImportantNumber;
 
-    // Protected
-    protected int TurnNumber;
+    // Protected Variables
+    protected int _turnNumber;
 
-    // Private
+    // Private Variables
     private int _effectStackCount;
 
     // Constructor

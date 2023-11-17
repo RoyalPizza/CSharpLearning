@@ -6,7 +6,8 @@ namespace CSharpLearn.CodingConventions;
 /// A class showing my preferred naming and style conventions
 /// </summary>
 /// <remarks>
-/// Most of these conventions are the MSFT naming conventions.
+/// Most of these conventions are the MSFT naming conventions. 
+/// <see href=https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names">LINK</see>
 /// </remarks>
 internal class NamingConventions
 {
@@ -14,6 +15,25 @@ internal class NamingConventions
     /// 
     /// </summary>
     public int SomePublicInt;
+
+    /// <summary>
+    /// Use pascal case for internal.
+    /// </summary>
+    /// <remarks>
+    /// This differs from MSFT a bit. They say to treat it like a private; but
+    /// just because it is isolated to this DLL; does not mean it wont be accesesd 
+    /// by other objects in the DLL. This is more simlar to a public than a private imo.
+    /// </remarks>
+    internal int SomeInternalInt;
+
+    /// <summary>
+    /// use _ and camel case for protected.
+    /// </summary>
+    /// <remarks>
+    /// This differs from the MSFT conventions. They recommend treating it like a public.
+    /// But because only child classes can access it, it feels closer to private than internal does.
+    /// </remarks>
+    protected int _someProtectedInt;
 
     /// <summary>
     /// use all caps and snake case for constants.
@@ -45,10 +65,10 @@ internal class NamingConventions
     }
 
     // Pascal case for methods
-    private void PrivateMethod() { }
     public void PublicMethod() { }
-    protected void ProtectedMethod() { }
     internal void InternalMethod() { }
+    protected void ProtectedMethod() { }
+    private void PrivateMethod() { }
 
     // Event Methods should have a tense. I do not do the "OnAction" naming style with events.
     private void ButtonClicked() { }

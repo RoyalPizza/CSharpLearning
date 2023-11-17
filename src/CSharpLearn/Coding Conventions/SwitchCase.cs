@@ -1,7 +1,7 @@
 ﻿namespace CSharpLearn.CodingConventions;
 
 /// <summary>
-/// 
+/// Details out my preferred way to handle switch cases
 /// </summary>
 internal class SwitchCase
 {
@@ -19,6 +19,9 @@ internal class SwitchCase
             case 2:
                 message1 = "You gots 2 dollaz";
                 break;
+            default:
+                message1 = "You gots NULL dollaz";
+                break;
         }
 
         // new way
@@ -28,5 +31,15 @@ internal class SwitchCase
             2 => "You gotz 2 dollaz",
             _ => "You gots NULL dollaz"
         };
+
+        /*
+         * The new way is shorter and easier to read.
+         * Its not good if you are performing actions in the swith case.
+         * Calling multiple methods (for example) is not good in the new way.
+         * But I typallly only use switch case to perform a single action; not multiple. 
+         * And that action is typically assining a value;
+         * 
+         * If I am doing more than just assinging a value; then I would use the old way.
+        */
     }
 }
